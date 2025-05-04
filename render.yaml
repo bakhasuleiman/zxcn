@@ -2,7 +2,7 @@ services:
   - type: web
     name: premium-notes-app
     env: node
-    buildCommand: npm run install:all && npm run build
+    buildCommand: npm install && cd backend && npm install && cd ../frontend && npm install && cd .. && npm run build
     startCommand: node backend/index.js
     envVars:
       - key: GITHUB_TOKEN
