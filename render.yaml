@@ -3,7 +3,7 @@ services:
     name: premium-notes-app
     env: node
     buildCommand: npm run install:all && npm run build
-    startCommand: npm start
+    startCommand: node backend/index.js
     envVars:
       - key: GITHUB_TOKEN
         sync: false
