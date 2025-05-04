@@ -1,0 +1,31 @@
+{
+  "name": "premium-notes-app",
+  "version": "1.0.0",
+  "description": "Премиум веб-сервис для заметок и задач",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:bot\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:bot": "cd telegram-bot && npm run dev",
+    "install:all": "npm install && npm run install:backend && npm run install:frontend && npm run install:bot",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:bot": "cd telegram-bot && npm install",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "notes",
+    "tasks",
+    "premium",
+    "github",
+    "markdown"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.1"
+  }
+} 

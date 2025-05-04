@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: premium-notes-app
+    env: node
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_OWNER
+        sync: false
+      - key: GITHUB_REPO
+        sync: false
+      - key: GITHUB_NOTES_PATH
+        value: data/notes.json
+      - key: GITHUB_TASKS_PATH
+        value: data/tasks.json
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: PORT
+        value: 3000
+    autoDeploy: true 

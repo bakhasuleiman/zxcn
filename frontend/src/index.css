@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Светлая тема (по умолчанию) */
+:root {
+  --bg-color: theme('colors.light-bg');
+  --text-color: theme('colors.light-text');
+  --accent-color: theme('colors.light-accent');
+  --muted-color: theme('colors.light-muted');
+  --card-color: theme('colors.light-card');
+}
+
+/* Темная тема */
+:root.dark {
+  --bg-color: theme('colors.dark-bg');
+  --text-color: theme('colors.dark-text');
+  --accent-color: theme('colors.dark-accent');
+  --muted-color: theme('colors.dark-muted');
+  --card-color: theme('colors.dark-card');
+}
+
+/* Ночная тема */
+:root.night {
+  --bg-color: theme('colors.night-bg');
+  --text-color: theme('colors.night-text');
+  --accent-color: theme('colors.night-accent');
+  --muted-color: theme('colors.night-muted');
+  --card-color: theme('colors.night-card');
+}
+
+body {
+  @apply bg-light-bg dark:bg-dark-bg night:bg-night-bg;
+  @apply text-light-text dark:text-dark-text night:text-night-text;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Стили для Markdown-контента */
+.markdown-content {
+  @apply text-light-text dark:text-dark-text night:text-night-text;
+}
+
+.markdown-content h1 {
+  @apply text-2xl font-bold mt-6 mb-4;
+}
+
+.markdown-content h2 {
+  @apply text-xl font-bold mt-5 mb-3;
+}
+
+.markdown-content h3 {
+  @apply text-lg font-bold mt-4 mb-2;
+}
+
+.markdown-content p {
+  @apply mb-4;
+}
+
+.markdown-content a {
+  @apply text-light-accent dark:text-dark-accent night:text-night-accent underline;
+}
+
+.markdown-content blockquote {
+  @apply pl-4 border-l-4 border-light-muted dark:border-dark-muted night:border-night-muted italic;
+}
+
+.markdown-content ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.markdown-content ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.markdown-content code {
+  @apply font-mono bg-light-muted dark:bg-dark-muted night:bg-night-muted px-1 rounded;
+}
+
+.markdown-content pre {
+  @apply font-mono bg-light-muted dark:bg-dark-muted night:bg-night-muted p-3 rounded mb-4 overflow-x-auto;
+}
+
+.markdown-content img {
+  @apply max-w-full h-auto my-4 rounded;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse mb-4;
+}
+
+.markdown-content th,
+.markdown-content td {
+  @apply border border-light-muted dark:border-dark-muted night:border-night-muted px-2 py-1;
+}
+
+.markdown-content .task-list-item {
+  @apply list-none;
+}
+
+.markdown-content .task-list-item-checkbox {
+  @apply mr-2;
+}
+
+/* Переключатель тем */
+.theme-toggle {
+  @apply flex items-center space-x-3 p-2;
+}
+
+.theme-toggle-btn {
+  @apply p-2 rounded-full bg-light-muted dark:bg-dark-muted night:bg-night-muted;
+  @apply text-light-text dark:text-dark-text night:text-night-text;
+}
+
+.theme-toggle-btn.active {
+  @apply bg-light-accent dark:bg-dark-accent night:bg-night-accent;
+  @apply text-white;
+} 
